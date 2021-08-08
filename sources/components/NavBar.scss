@@ -1,0 +1,12 @@
+.NavBar {
+  border: 1px solid navy;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+  }
+}

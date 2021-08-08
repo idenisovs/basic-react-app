@@ -1,11 +1,11 @@
 import React from 'react';
-import Counter from './Counter';
+import NavBar from './components/NavBar';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default function App() {
     return (
-        <div>
-            <h1>Hello world!</h1>
-            <Counter />
-        </div>
+        <Router>
+            <NavBar />
+        </Router>
     )
 }

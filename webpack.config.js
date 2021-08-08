@@ -9,7 +9,8 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     devServer: {
-        contentBase: TARGET_DIR
+        contentBase: TARGET_DIR,
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -20,7 +21,24 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] }
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+            {
+                test: /\.s?css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
+                    'sass-loader'
+                ]
+            }
         ]
     },
     resolve: {
