@@ -5,7 +5,7 @@ const SOURCE_DIR = path.join(__dirname, 'sources');
 const TARGET_DIR = path.join(__dirname, 'target');
 
 module.exports = {
-    entry: path.join(SOURCE_DIR, 'app.js'),
+    entry: path.join(SOURCE_DIR, 'index.js'),
     mode: 'development',
     devtool: 'source-map',
     devServer: {
@@ -18,6 +18,14 @@ module.exports = {
             favicon: path.join(SOURCE_DIR, 'favicon.ico')
         })
     ],
+    module: {
+        rules: [
+            { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] }
+        ]
+    },
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
     output: {
         filename: 'bundle.js',
         path: TARGET_DIR
