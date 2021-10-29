@@ -1,0 +1,42 @@
+.TrafficLightsSimple {
+  header {
+    margin-bottom: 1em;
+  }
+
+  .Lights {
+    display: flex;
+    flex-direction: row;
+
+    .Light {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+      margin-right: 1em;
+    }
+
+    .Red {
+      background-color: rgba(255, 0, 0, 0.05);
+
+      &.On {
+        background-color: rgba(255, 0, 0, 1);
+      }
+    }
+
+    .Yellow {
+      background-color: rgba(255, 255, 0, 0.05);
+
+      &.On {
+        background-color: rgba(255, 255, 0, 1);
+      }
+    }
+
+    .Green {
+      background-color: rgba(0, 255, 0, 0.05);
+
+      &.On {
+        background-color: rgba(0, 255, 0, 1);
+      }
+    }
+  }
+}
