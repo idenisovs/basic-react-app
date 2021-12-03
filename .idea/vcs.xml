@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sources/shared" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../react-shared-components" vcs="Git" />
   </component>
 </project>
