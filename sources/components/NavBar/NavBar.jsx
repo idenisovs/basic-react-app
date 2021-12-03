@@ -25,6 +25,11 @@ export function NavBar() {
           </div>
           <small>HOC example</small>
         </li>
+        <li>
+          <Link to="/anomalies">
+            Anomalies
+          </Link>
+        </li>
       </ul>
     </nav>
   )

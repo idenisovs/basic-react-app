@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavBar } from './components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Dashboard, TrafficLights, Users } from './pages';
+import { Anomalies, Dashboard, TrafficLights, Users } from './pages';
 
 import style from './App.scss';
 
@@ -20,6 +20,9 @@ export default function App() {
           </Route>
           <Route path="/traffic-lights">
             <TrafficLights />
+          </Route>
+          <Route path="/anomalies">
+            <Anomalies />
           </Route>
         </Switch>
       </div>
