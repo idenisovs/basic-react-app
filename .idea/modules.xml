@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/basic-react.iml" filepath="$PROJECT_DIR$/.idea/basic-react.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../react-shared-components/react-shared-components.iml" filepath="$PROJECT_DIR$/../react-shared-components/react-shared-components.iml" />
     </modules>
   </component>
 </project>
