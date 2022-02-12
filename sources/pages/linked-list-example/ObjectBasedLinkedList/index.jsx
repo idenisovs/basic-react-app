@@ -15,8 +15,6 @@ function ObjectBasedLinkedList(props) {
       return;
     }
 
-    console.log(anomalies);
-
     const objectBasedLinkedList = makeLinkedList(anomalies);
 
     setLinkedList(objectBasedLinkedList);
