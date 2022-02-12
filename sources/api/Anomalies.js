@@ -1,14 +1,14 @@
 export class Anomalies {
     static getAll() {
         const response = {
-            price: 0.28,
+            rate: 0.33,
             items: [
                 { name: 'A' },
                 { name: 'B' },
                 { name: 'C' }
             ],
             others: {
-                rate: 0.35,
+                rate: 0.44,
                 items: [
                     { name: 'D' },
                     { name: 'E' },
@@ -16,11 +16,10 @@ export class Anomalies {
                     { name: 'G' },
                 ],
                 others: {
-                    rate: 0.12, 
+                    rate: 0.22,
                     items: [
                         { name: 'Q' },
                         { name: 'W' },
-                        { name: 'E' }
                     ]
                 }
             }
