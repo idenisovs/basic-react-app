@@ -1,31 +1,25 @@
 import React from 'react';
 import { NavBar } from './components';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Anomalies, Dashboard, TrafficLights, Users } from './pages';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Anomalies, Dashboard, TrafficLights, Users, Transformations } from './pages';
 
 import style from './App.scss';
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <NavBar/>
 
       <div className={style.PageLayout}>
-        <Switch>
-          <Route exact path="/">
-            <Dashboard/>
-          </Route>
-          <Route path="/users">
-            <Users/>
-          </Route>
-          <Route path="/traffic-lights">
-            <TrafficLights />
-          </Route>
-          <Route path="/anomalies">
-            <Anomalies />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Dashboard />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/traffic-lights" element={<TrafficLights />} />
+          <Route path="/anomalies" element={<Anomalies />} />
+          <Route path="/transformations" element={<Transformations />} />
+        </Routes>
       </div>
-    </Router>
+
+    </BrowserRouter>
   )
 }

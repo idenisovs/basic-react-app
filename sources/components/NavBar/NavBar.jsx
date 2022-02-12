@@ -30,6 +30,11 @@ export function NavBar() {
             Anomalies
           </Link>
         </li>
+        <li>
+          <Link to="/transformations">
+            Transformations
+          </Link>
+        </li>
       </ul>
     </nav>
   )

@@ -9,8 +9,10 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     devServer: {
-        contentBase: TARGET_DIR,
-        historyApiFallback: true
+        historyApiFallback: true,
+        static: {
+            directory: path.join()
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
