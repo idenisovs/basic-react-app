@@ -4,11 +4,11 @@ import { Anomalies } from '../../api';
 
 import makeLinkedList from './makeLinkedList';
 import ObjectBasedLinkedList from './ObjectBasedLinkedList';
-
-import styles from './Transformations.scss';
 import ArrayBasedLinkedList from './ArrayBasedLinkedList';
 
-export function Transformations() {
+import styles from './LinkedListExample.scss';
+
+export function LinkedListExample() {
     const [anomalies, setAnomalies] = useState(null);
     const [linkedList, setLinkedLists] = useState({
       objectBased: null,
@@ -31,7 +31,7 @@ export function Transformations() {
     }, [anomalies]);
 
     return (
-      <section className={styles.Transformations}>
+      <section className={styles.LinkedListExample}>
         <div className={styles.LinkedListDemo}>
           <h2>Linked List Demo</h2>
 

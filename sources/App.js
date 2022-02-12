@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavBar } from './components';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Anomalies, Dashboard, TrafficLights, Users, Transformations } from './pages';
+import { Dashboard, TrafficLights, Users, LinkedListExample } from './pages';
 
 import style from './App.scss';
 
@@ -15,7 +15,7 @@ export default function App() {
           <Route exact path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
           <Route path="/traffic-lights" element={<TrafficLights />} />
-          <Route path="/transformations" element={<Transformations />} />
+          <Route path="/linked-list-examples" element={<LinkedListExample />} />
         </Routes>
       </div>
 

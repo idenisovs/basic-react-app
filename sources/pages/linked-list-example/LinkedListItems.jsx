@@ -7,7 +7,7 @@ const colors = [
   'blue',
   'MediumSpringGreen',
   'red',
-  'yellow'
+  'orange'
 ]
 
 function LinkedListItems(props) {
@@ -26,7 +26,7 @@ function LinkedListItems(props) {
 
         counter++;
 
-        if (counter === 3) {
+        if (counter > color.length) {
           counter = 0;
         }
 

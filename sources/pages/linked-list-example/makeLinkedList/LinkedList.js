@@ -2,7 +2,7 @@ export default class LinkedList {
   position = 0;
   nodes;
 
-  get CurrentNode() {
+  get CurrentItem() {
     return this.nodes[this.position];
   }
 
@@ -21,7 +21,7 @@ export default class LinkedList {
 
   previous() {
     if (!this.isPrevAvailable) {
-      return;
+      return null;
     }
 
     this.position--;
@@ -31,7 +31,7 @@ export default class LinkedList {
 
   next() {
     if (!this.isNextAvailable) {
-      return;
+      return null;
     }
 
     this.position++;

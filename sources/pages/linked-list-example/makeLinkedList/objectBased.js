@@ -5,14 +5,15 @@ export default function objectBased(anomaliesRawData) {
 function makeNode(anomalies, prevNode = null) {
     const node = {
       prev: null,
-      items: [],
-      rate: 0,
+      item: {},
       next: null
     };
 
   if (anomalies.items) {
-    node.items = anomalies.items;
-    node.rate = anomalies.rate;
+    node.item = {
+      items: anomalies.items,
+      rate: anomalies.rate
+    };
   }
 
   if (prevNode) {

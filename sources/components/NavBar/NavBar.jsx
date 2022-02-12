@@ -26,8 +26,8 @@ export function NavBar() {
           <small>HOC example</small>
         </li>
         <li>
-          <Link to="/transformations">
-            Transformations
+          <Link to="/linked-list-examples">
+            Linked List Examples
           </Link>
         </li>
       </ul>
