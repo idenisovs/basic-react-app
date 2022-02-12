@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 import { Anomalies } from '../../api';
 
-import makeLinkedList from './makeLinkedList';
 import ObjectBasedLinkedList from './ObjectBasedLinkedList';
 import ArrayBasedLinkedList from './ArrayBasedLinkedList';
 
@@ -10,25 +9,10 @@ import styles from './LinkedListExample.scss';
 
 export function LinkedListExample() {
     const [anomalies, setAnomalies] = useState(null);
-    const [linkedList, setLinkedLists] = useState({
-      objectBased: null,
-      arrayBased: null
-    });
 
     useEffect(() => {
         Anomalies.getAll().then(setAnomalies);
     }, []);
-
-    useEffect(() => {
-      if (!anomalies) {
-        return;
-      }
-
-      setLinkedLists({
-        arrayBased: makeLinkedList(anomalies, true),
-        objectBased: makeLinkedList(anomalies, false)
-      });
-    }, [anomalies]);
 
     return (
       <section className={styles.LinkedListExample}>
@@ -37,12 +21,12 @@ export function LinkedListExample() {
 
           <div>
             <h3>Object Based</h3>
-            <ObjectBasedLinkedList linkedList={linkedList.objectBased} />
+            <ObjectBasedLinkedList anomalies={anomalies} />
           </div>
 
           <div>
             <h3>Array Based</h3>
-            <ArrayBasedLinkedList linkedList={linkedList.arrayBased} />
+            <ArrayBasedLinkedList anomalies={anomalies} />
           </div>
 
         </div>

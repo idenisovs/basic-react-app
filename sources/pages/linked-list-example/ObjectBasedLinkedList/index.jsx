@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import LinkedListItems from './LinkedListItems';
-import styles from './LinkedList.scss';
+import LinkedListItems from '../LinkedListItems';
+import makeLinkedList from './makeLinkedList';
+import styles from '../LinkedList.scss';
 
 function ObjectBasedLinkedList(props) {
-  const { linkedList } = props;
+  const { anomalies } = props;
 
-  const [ currentNode, setCurrentNode ] = useState({});
+  const [ linkedList, setLinkedList ] = useState({});
 
   useEffect(() => {
-    if (!linkedList) {
+    if (!anomalies) {
       return;
     }
 
-    setCurrentNode(linkedList);
-  }, [linkedList]);
+    console.log(anomalies);
 
-  const { prev: prevNode, next: nextNode } = currentNode;
+    const objectBasedLinkedList = makeLinkedList(anomalies);
+
+    setLinkedList(objectBasedLinkedList);
+  }, [anomalies]);
+
+  const { prev: prevNode, next: nextNode } = linkedList;
 
   function getPreviousNode() {
-    setCurrentNode(prevNode);
+    setLinkedList(prevNode);
   }
 
   function getNextNode() {
-    setCurrentNode(nextNode);
+    setLinkedList(nextNode);
   }
 
-  const { item: currentItem } = currentNode;
+  const { currentItem } = linkedList;
 
   if (!currentItem) {
     return null;
@@ -54,7 +59,7 @@ function ObjectBasedLinkedList(props) {
 }
 
 ObjectBasedLinkedList.propTypes = {
-  linkedList: PropTypes.object
+  anomalies: PropTypes.object
 };
 
 export default ObjectBasedLinkedList;

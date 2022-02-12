@@ -1,6 +1,6 @@
 import LinkedList from './LinkedList';
 
-export default function arrayBased(anomaliesRawData) {
+export default function makeLinkedList(anomaliesRawData) {
   const anomaliesArray = []
 
   transformToArray(anomaliesRawData, anomaliesArray);

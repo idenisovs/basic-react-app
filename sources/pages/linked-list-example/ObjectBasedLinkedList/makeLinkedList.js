@@ -1,16 +1,16 @@
-export default function objectBased(anomaliesRawData) {
+export default function makeLinkedList(anomaliesRawData) {
   return makeNode(anomaliesRawData);
 }
 
 function makeNode(anomalies, prevNode = null) {
     const node = {
       prev: null,
-      item: {},
+      currentItem: {},
       next: null
     };
 
   if (anomalies.items) {
-    node.item = {
+    node.currentItem = {
       items: anomalies.items,
       rate: anomalies.rate
     };

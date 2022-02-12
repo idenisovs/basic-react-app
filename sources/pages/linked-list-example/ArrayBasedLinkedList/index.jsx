@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import LinkedListItems from './LinkedListItems';
-import styles from './LinkedList.scss';
+import LinkedListItems from '../LinkedListItems';
+import styles from '../LinkedList.scss';
+import makeLinkedList from './makeLinkedList';
 
 function ArrayBasedLinkedList(props) {
-  const { linkedList } = props;
-  const [ currentItem, setCurrentItem ] = useState({});
+  const { anomalies } = props;
+  const [ linkedList, setLinkedList ] = useState(null);
+  const [ currentItem, setCurrentItem ] = useState(null);
 
   useEffect(() => {
-    if (linkedList) {
-      setCurrentItem(linkedList.CurrentItem);
+    if (!anomalies) {
+      return;
     }
-  }, [linkedList])
+
+    const arrayBasedLinkedList = makeLinkedList(anomalies);
+
+    setLinkedList(arrayBasedLinkedList);
+    setCurrentItem(arrayBasedLinkedList.CurrentItem);
+  }, [anomalies])
 
   function getPreviousNode() {
     setCurrentItem(linkedList.previous());
@@ -22,7 +29,7 @@ function ArrayBasedLinkedList(props) {
     setCurrentItem(linkedList.next());
   }
 
-  if (!linkedList) {
+  if (!currentItem) {
     return null;
   }
 
