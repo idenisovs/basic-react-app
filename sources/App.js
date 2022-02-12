@@ -15,7 +15,6 @@ export default function App() {
           <Route exact path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
           <Route path="/traffic-lights" element={<TrafficLights />} />
-          <Route path="/anomalies" element={<Anomalies />} />
           <Route path="/transformations" element={<Transformations />} />
         </Routes>
       </div>
