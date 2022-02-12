@@ -1,4 +1,4 @@
-export default function makeLinkedList(anomaliesRawData) {
+export default function objectBased(anomaliesRawData) {
   return makeNode(anomaliesRawData);
 }
 

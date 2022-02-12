@@ -4,32 +4,31 @@ import PropTypes from 'prop-types';
 import LinkedListItems from './LinkedListItems';
 import styles from './LinkedList.scss';
 
-function LinkedList(props) {
-  const { list } = props;
-
+function ArrayBasedLinkedList(props) {
+  const { linkedList } = props;
   const [ currentNode, setCurrentNode ] = useState({});
 
   useEffect(() => {
-    if (!list) {
-      return;
+    if (linkedList) {
+      setCurrentNode(linkedList.CurrentNode);
     }
-
-    setCurrentNode(list);
-  }, [list]);
-
-  const { prev: prevNode, next: nextNode } = currentNode;
+  }, [linkedList])
 
   function getPreviousNode() {
-    setCurrentNode(prevNode);
+    setCurrentNode(linkedList.previous());
   }
 
   function getNextNode() {
-    setCurrentNode(nextNode);
+    setCurrentNode(linkedList.next());
+  }
+
+  if (!linkedList) {
+    return null;
   }
 
   return (
     <div className={styles.LinkedList}>
-      <button disabled={!prevNode} onClick={getPreviousNode}>
+      <button disabled={!linkedList.IsPreviousAvailable} onClick={getPreviousNode}>
         Previous Node
       </button>
 
@@ -40,15 +39,19 @@ function LinkedList(props) {
         </small>
       </div>
 
-      <button disabled={!nextNode} onClick={getNextNode}>
+      <button disabled={!linkedList.IsNextAvailable} onClick={getNextNode}>
         Next Node
       </button>
     </div>
   );
 }
 
-LinkedList.propTypes = {
-  list: PropTypes.object
+ArrayBasedLinkedList.propTypes = {
+  linkedList: PropTypes.object
 };
 
-export default LinkedList;
+ArrayBasedLinkedList.defaultProps = {
+  linkedList: null
+}
+
+export default ArrayBasedLinkedList;
