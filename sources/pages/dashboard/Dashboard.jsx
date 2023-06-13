@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { FancyButton } from '../../shared';
 import { increment, reset } from '../../store/counter';
 
 export function Dashboard() {
@@ -28,12 +27,6 @@ export function Dashboard() {
                 <button type="button" onClick={resetCounter}>
                     Reset
                 </button>
-            </div>
-            <div>
-                <h3>Fancy button example</h3>
-                <FancyButton>
-                    Hello World
-                </FancyButton>
             </div>
         </div>
     );
