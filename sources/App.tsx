@@ -15,7 +15,7 @@ export default function App() {
 
       <div className={style.PageLayout}>
         <Routes>
-          <Route exact path="/" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/traffic-lights" element={<TrafficLights />} />
         </Routes>
       </div>

@@ -5,7 +5,13 @@ import PropTypes from 'prop-types';
 import style from './TrafficLightsSimple.scss';
 import { trafficLightsStates as states } from './TrafficLightsStates';
 
-function TrafficLightsSimple(props) {
+interface TrafficLightsSimpleProps {
+  state: string;
+  title: string;
+  onChange: () => void;
+}
+
+function TrafficLightsSimple(props: TrafficLightsSimpleProps) {
   const { state, title, onChange } = props;
 
   return (

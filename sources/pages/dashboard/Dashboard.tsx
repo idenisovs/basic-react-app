@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { increment, reset } from '../../store/counter';
 
 export function Dashboard() {
-    const counter = useSelector((state) => state.counter.value);
+    const counter = useSelector((state: any) => state.counter.value);
     const dispatch = useDispatch();
 
     function increaseCounter() {

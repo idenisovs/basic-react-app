@@ -5,7 +5,7 @@ const SOURCE_DIR = path.join(__dirname, 'sources');
 const TARGET_DIR = path.join(__dirname, 'target');
 
 module.exports = {
-    entry: path.join(SOURCE_DIR, 'index.js'),
+    entry: path.join(SOURCE_DIR, 'index.tsx'),
     mode: 'development',
     devtool: 'source-map',
     devServer: {
@@ -23,6 +23,11 @@ module.exports = {
     ],
     module: {
         rules: [
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
@@ -44,7 +49,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx']
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
     },
     output: {
         filename: 'bundle.js',
